@@ -44,11 +44,9 @@ Este projeto utiliza o modelo XGBoost para prever preços de apartamentos em Nov
      import xgboost as xgb
      import pandas as pd
 
-     # Carregar os dados de teste
      teste = pd.read_csv('teste_indicium_precificacao.csv')
      dtest = xgb.DMatrix(teste)
 
-     # Carregar modelo e prever
      bst = xgb.Booster()
      bst.load_model('xgb_model.pkl')
      y_pred = bst.predict(dtest)
